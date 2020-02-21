@@ -232,7 +232,7 @@ namespace ShopifySharp
                     {"Error", new List<string>() {listMessage}}
                 };
 
-                throw new ShopifyRateLimitException(code, rateLimitErrors, rateLimitMessage, rawResponse, requestId);
+                throw new ShopifyRateLimitException(code, rateLimitErrors, rateLimitMessage, rawResponse, requestId, response.Headers);
             }
 
             var contentType = response.Content.Headers.GetValues("Content-Type").FirstOrDefault();
